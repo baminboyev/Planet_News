@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card mb-3 detail-view-div">
+    {% if object.photo %}
+    <img src="{{ object.photo.url }}" class="card-img-top" alt="{{ object_list.title }}"/>
+    {% endif %}
+    <div class="card-body">
+      <h5 class="card-title">{{ object.title }}</h5>
+      <p class="card-text">
+        {{ object.body | safe }}
+      </p>
+      <p class="card-text">
+        <small class="text-muted"><i class="fas fa-user card-icons"></i>{{ object.author }}<i class="fas fa-calendar card-icons"></i>{{ object.date }}</small>
+      </p>
+    </div>
+    {% if user.is_authenticated %}
+    <div class="detail-view-buttons">
+      <a href="{% url 'article_delete' article.pk %}"><button type="button detail-button" class="btn btn-danger"><i class="fa fa-trash card-icons"></i>O'chirish</button></a>
+      <a href="{% url 'article_edit' article.pk %}"><button type="button detail-button" class="btn btn-warning"><i class="fas fa-edit card-icons"></i>Tahrirlash</button></a>
+    </div>
+    {% else %}
+    <p></p>
+    {% endif %}
+  </div>
+
+  
+{% endblock content %}

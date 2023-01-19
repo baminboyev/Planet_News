@@ -1,0 +1,314 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon start -->
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.css" rel="stylesheet"/>
+    <!-- Style Css -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- Faviconlar -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static '/favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static '/favicon/favicon-32x32.png' %} ">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static '/favicon/favicon-32x32.png' %}">
+    <link rel="manifest" href="{% static '/favicon/site.webmanifest' %} ">
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/favicon.html' %}" />
+        <!-- bootstrap.min css -->
+        <link rel="stylesheet" href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
+        <!-- animate.css -->
+        <link rel="stylesheet" href="{% static 'assets/plugins/animate-css/animates.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/plugins/fontawesome/css/all.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/plugins/themify/css/themify-icons.css' %}">
+        <!-- Magnify Popup -->
+        <link rel="stylesheet" href="{% static 'assets/plugins/magnific-popup/dist/magnific-popup.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/plugins/animated-text/animated-text.css' %}">
+        <!-- Slick Carousel CSS -->
+        <link rel="stylesheet" href="{% static 'assets/plugins/slick-carousel/slick/slick.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/plugins/slick-carousel/slick/slick-theme.css' %}">
+        <!-- Main Stylesheet -->
+        <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <title>{% block title %}Aminboyev's blog{% endblock title %}</title>
+</head>
+<body>
+    <nav>
+<!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-warning bg-transportor">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+          <!-- Toggle button -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+      
+          <!-- Collapsible wrapper -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Navbar brand -->
+            <a class="navbar-brand mt-2 mt-lg-0 " href="{% url 'home' %}">
+              <img
+                src="{% static '/images/planet.png' %}"
+                height="40"
+                alt="Aminboyev's"
+                loading="lazy"
+              />
+            </a>
+            <!-- Left links -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link navbar-link-hover" href="{% url 'home' %}">Bosh sahifa</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navbar-link-hover" href="#services">Portfolio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navbar-link-hover" href="{% url 'article_list' %}">Yangiliklar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navbar-link-hover" href="#blog">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navbar-link-hover" href="#contact">Contact</a>
+              </li>
+            </ul>
+            <!-- Left links -->
+          </div>
+          <!-- Collapsible wrapper -->
+      
+          <!-- Right elements -->
+          <div class="d-flex align-items-center">  
+            <!-- Notifications -->
+            {% if user.is_authenticated %}
+            <div class="dropdown">
+              <a
+                class="text-reset me-3 dropdown-toggle hidden-arrow"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="fas fa-bell"></i>
+                <span class="badge rounded-pill badge-notification bg-danger">1</span>
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <li>
+                  <a class="dropdown-item" href="#">Some news</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Another news</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </div>
+            <!-- Avatar -->
+            <div class="dropdown">
+              <a
+                class="dropdown-toggle d-flex align-items-center hidden-arrow"
+                href="#"
+                id="navbarDropdownMenuAvatar"
+                role="button"
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  src="{% static '/images/nasa.png'  %}"
+                  class="rounded-circle"
+                  height="35"
+                  alt="Black and White Portrait of a Man"
+                  loading="lazy"
+                />
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="navbarDropdownMenuAvatar"
+              >
+              <li>
+                <a href="{% url 'article_new' %}" class="dropdown-item avatar-item-new-post">
+                <i class="fas fa-plus avatar-item-link"></i>Yangi post
+                </a>
+              </li>
+                <li>
+                  <a href="" class="dropdown-item ">
+                  <i class="fas fa-user-alt avatar-item-link"></i>{{ user.username | title }}
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="dropdown-item ">
+                    <i class="fas fa-cog avatar-item-link"></i>Sozlamalar
+                    </a>
+                </li>
+                <li>
+                  <a class="dropdown-item avatar-item-logout" href="{% url 'logout' %}">
+                    <i class="fas fa-sign-out-alt avatar-item-link"></i>Chiqish
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {% else %}
+            <div class="dropdown">
+              <a
+                class="dropdown-toggle d-flex align-items-center hidden-arrow"
+                href="#"
+                id="navbarDropdownMenuAvatar"
+                role="button"
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  src="{% static '/images/no_user_2.jpg' %}"
+                  class="rounded-circle"
+                  height="35"
+                  alt="Black and White Portrait of a Man"
+                  loading="lazy"
+                />
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="navbarDropdownMenuAvatar"
+              >
+              <!-- Username chiqoradi  -->
+
+              <!-- <li>
+                <a href="" class="dropdown-item username-active">
+                <i class="fas fa--alt avatar-item-link"></i><b>{{ user.username }}</b>!
+                <span class="badge rounded-pill badge-success">Active</span>
+                </a>
+              </li> -->
+                <li>
+                  <a href="{% url 'login' %}" class="dropdown-item avatar-dropdown-login hover-log-link">
+                    <i class="fas fa-cog avatar-item-link"></i>Kirish
+                    </a>
+                </li>
+                <li>
+                  <a class="dropdown-item avatar-dropdown-signup hover-sign-link" href="{% url 'signup' %}">
+                    <i class="fas fa-sign-out-alt avatar-item-link "></i>Ro'yxatdan o'tish
+                  </a>
+                </li>
+              </ul>
+            {% endif %}
+          </div>
+          <!-- Right elements -->
+        </div>
+        <!-- Container wrapper -->
+    </nav>
+<!-- Navbar -->
+
+
+
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>    
+
+
+
+
+
+
+
+<!-- Footer -->
+<section class="footer ">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 mr-auto col-md-12">
+				<div class="footer-widget widget mb-5 mb-lg-0">
+					<h3 class="mb-3 text-white">Baminboyev.</h3>
+					<p>Minimal & Crative Portfolio/CV/Biodata Solution in One Platform. </p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<div class="footer-widget widget mb-5 mb-lg-0">
+					<h6 class="mb-4">Men bilan bog'laning</h6>
+					<div class="footer-contact">
+						<h5>behruzaminboyev70gmail.com</h5>
+						<h5>+998 91 422 22 22</h5>
+						<h5> Uzbekistan, Xorazm</h5>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6">
+				<div class="footer-widget widget">
+					<h6 class="mb-4">Obuna bo'ling</h6>
+					<ul class="list-inline footer-socials-icon mb-0">
+						<li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+						<li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+						<li class="list-inline-item"><a href="#"><i class="fab fa-github"></i></a></li>
+						<li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+						<li class="list-inline-item"><a href="#"><i class="fab fa-telegram"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer-btm ">
+			<div class="row align-items-center">
+				<div class="col-lg-8">
+					<p class="mb-0"><a href="https://www.youtube.com/@baminboyev/" target="_blank">Behruz Aminboyev</a></p>
+				</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+</section>
+
+<!-- Footer -->
+
+</body>
+
+
+
+<script>
+    window.replainSettings = { id: 'd373e744-5523-4b1c-a605-a130e9d9cb4a' };
+    (function(u){var s=document.createElement('script');s.async=true;s.src=u;
+    var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);
+    })('https://widget.replain.cc/dist/client.js');
+</script>
+
+    <!-- Main jQuery -->
+    <script src="{% static 'assets/plugins/jquery/jquery.min.js' %}"></script>
+    <!-- Bootstrap 4.3.1 -->
+    <script src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!-- Slick Slider -->
+    <script src="{% static 'assets/plugins/slick-carousel/slick/slick.min.js' %}"></script>
+    <!-- Progress Bar -->
+    <script src="{% static 'assets/plugins/counto/apear.js' %}"></script>
+    <script src="{% static 'assets/plugins/counto/counTo.js' %}"></script>
+    <script src="{% static 'assets/plugins/animated-text/animated-text.js' %}"></script>
+
+    <script src="{% static 'assets/plugins/counterup/waypoint.js' %}"></script>
+    <script src="{% static 'assets/plugins/counterup/jquery.counterup.min.js' %}"></script>
+    <!--  Magnific Popup-->
+    <script src="{% static 'assets/plugins/magnific-popup/dist/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/shuffle/shuffle.min.js' %}"></script>
+  
+    <script src="{% static 'assets/plugins/jquery/ajax-contact.js' %}"></script>
+    <script src="{% static 'assets/js/script.js' %}"></script>
+
+
+
+<!-- MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script>
+</html>

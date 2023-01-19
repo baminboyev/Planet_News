@@ -1,0 +1,151 @@
+.login-mt{
+    margin-top: 100px;
+}
+
+.footer-bg-color{
+    background-color: rgb(22, 22, 22);
+}
+
+.pagination-center{
+    display: flex;
+    justify-content: center;
+    padding: 32px 0px;
+}
+.avatar-item-link{
+    padding-right: 10px;
+}
+.username-active{
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.navbar-div{
+
+    margin-top:0px;
+}
+
+.bg-image-footer{
+    background-image: url("https://pixy.org/src/475/4752524.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.register-buttons{
+    margin-right: 8px;    
+}
+.navbar-link-hover:hover{
+    color: #219DEF;
+}
+.card-title-hover{
+    color: #219DEF;
+}
+.card-title-hover:hover{
+  color: #7dcbff;
+
+}
+.card-icons{
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.detail-view-buttons{
+  margin-left: 25px;
+  margin-bottom: 40px;
+}
+.detail-view-div{
+  margin-top: 80px;
+}
+
+.footer-div{
+  margin-top: 80px;
+}
+
+.edit-view-div{
+  margin-top: 80px;
+  margin-bottom: 80px;
+  padding-left: 20px;
+}
+.detail-edit-button{
+  margin-top: 30px;
+}
+.avatar-dropdown-login{
+  color: #219DEF;
+}
+
+.avatar-dropdown-signup{
+  color: #009122;
+}
+.hover-log-link:hover{
+  color: #53b5f6;
+}
+.hover-sign-link:hover{
+  color: #2eb74e;
+}
+
+.login-form-div{
+  margin-top: 30px;
+}
+
+.avatar-item-logout{
+  color: red;
+}
+.avatar-item-logout:hover{
+  color: red;
+} 
+.avatar-item-new-post{
+  color: rgb(0, 185, 0);
+}
+
+.avatar-item-new-post:hover{
+  color: rgb(0, 185, 0);
+}
+
+#hint_id_password1{
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding:0 !important;
+  border:0 !important;
+  height: 1px !important; 
+  width: 1px !important; 
+  overflow: hidden;
+}
+
+#hint_id_username{
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding:0 !important;
+  border:0 !important;
+  height: 1px !important; 
+  width: 1px !important; 
+  overflow: hidden; 
+}
+#div_id_username,
+#div_id_password1,
+#div_id_password2 {
+  margin-bottom: 15px;
+}
+
+.button1 {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+background-color: white; 
+color: black; 
+border: 2px solid #4CAF50;
+}
+
+.batafsil-link{
+  color: #7dcbff;
+}

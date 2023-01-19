@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="edit-view-div">
+    <h1>Yangi post</h1>
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+    {{ form|crispy }}
+    <button class="btn btn-success detail-edit-button" type="submit">Saqlash</button>
+</form>
+</div>
+{% endblock content %}

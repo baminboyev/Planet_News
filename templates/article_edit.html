@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="edit-view-div">
+    <h1>Tahrirlash</h1>
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+    {{ form|crispy }}
+    <button class="btn btn-success detail-edit-button" type="submit">Save</button>
+    <a href="{% url 'article_list' %}"><button class="btn btn-danger detail-edit-button" type="button">Back</button></a>
+</form>
+</div>
+{% endblock content %}

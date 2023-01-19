@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}Baminboyev | Yangiliklar{% endblock title %}
+{% block content %}
+    <!-- Main section end -->
+
+    {% for article in object_list %}
+    <div class="row row-cols-1 row-cols-md-3 g-4 pt-4 pb-3">
+      <div class="col">
+        <div class="card h-100">
+          <img src="{{ article.photo.url }}" class="card-img-top" alt="Skyscrapers"/>
+          <div class="card-body">
+          <a href="{% url 'article_detail' article.pk %}"><h5 class="card-title card-title-hover">{{ article.title }}</h5></a>
+            <p class="card-text">
+              {{article.body|slice:"150"  }}... <a href="{% url 'article_detail' article.pk %}" class="batafsil-link" >batafsil</a>
+            </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted"><i class="fas fa-user card-icons"></i>{{ article.author }}<i class="fas fa-calendar card-icons"></i>{{ article.date }}</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+
+    <!-- Paginotor start -->
+<div class="section">
+    <nav class="pagination-center">
+        <ul class="pagination">
+          <li class="page-item disabled">
+            <a class="page-link">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item active" aria-current="page">
+            <a class="page-link" href="#">2 <span class="visually-hidden">(current)</span></a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+    </nav>
+</div>
+    <!-- Paginotor end -->
+{% endblock content %}
